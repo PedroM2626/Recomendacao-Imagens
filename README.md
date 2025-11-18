@@ -60,9 +60,45 @@ Saída `recs.jsonl` (um JSON por linha):
 ...
 ```
 
+## Uso via Notebook (Jupytext)
+
+- Converter do script para notebook:
+
+```
+pip install jupytext nbformat
+python -m jupytext --to ipynb image_recommender.py
+```
+
+- Abrir `image_recommender.ipynb` no Jupyter e executar as células para definir as funções.
+- Exemplo de célula para indexação e recomendação:
+
+```
+# Se necessário, instale dependências dentro do notebook
+%pip install torch torchvision pillow numpy python-dotenv
+
+# Após executar as células de definição do sistema
+E, paths = index_images("images", "index.npz", device="cpu", model_name="resnet50")
+recs = recommend("index.npz", "consulta.jpg", topk=5)
+recs
+```
+
+- Converter de volta para Python mantendo o conteúdo:
+
+```
+python -m jupytext --to py image_recommender.ipynb
+```
+
+- Opcional: manter pareamento entre `.py` e `.ipynb` (sincronização):
+
+```
+python -m jupytext --set-formats ipynb,py image_recommender.py
+python -m jupytext --sync image_recommender.py
+```
+
 ## Estrutura do Projeto
 
 - `image_recommender.py`: código único do sistema (extração, indexação, busca e testes).
+- `image_recommender.ipynb`: versão notebook gerada com Jupytext.
 - `.env` e `.env.example`: configuração via variáveis de ambiente.
 - `index.npz`: arquivo de índice gerado (embeddings e caminhos das imagens).
 - `README.md`: documentação completa.

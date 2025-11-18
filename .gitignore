@@ -10,3 +10,4 @@ index.npz
 *.bmp
 *.webp
 .DS_Store
+.ipynb_checkpoints/
