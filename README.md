@@ -1,21 +1,25 @@
 # Sistema de Recomendação de Imagens
 
-Sistema completo de recomendação de imagens com inteligência artificial, desenvolvido com React (frontend) e FastAPI (backend).
+> ⚠️ **EM DESENVOLVIMENTO** - Este projeto está em fase ativa de desenvolvimento. Algumas funcionalidades podem não estar completas ou podem apresentar instabilidades.
+
+Sistema de recomendação de imagens com inteligência artificial, desenvolvido com React (frontend) e FastAPI (backend).
 
 ## 🚀 Funcionalidades
 
+> ⚠️ **IMPORTANTE**: Algumas funcionalidades listadas abaixo ainda estão em desenvolvimento ou podem não estar totalmente funcionais.
+
 ### Frontend (React + TypeScript)
-- **Interface Moderna**: Design responsivo com Tailwind CSS
-- **Upload Intuitivo**: Drag & drop com preview em tempo real
-- **Galeria de Imagens**: Visualização em grid com busca e filtros
-- **Sistema de Recomendações**: Visualização detalhada de imagens similares
-- **Processamento em Tempo Real**: Feedback visual durante upload e análise
+- ✅ **Interface Básica**: Estrutura inicial implementada
+- ⚠️ **Upload de Imagens**: Funcionalidade em desenvolvimento (pode ter bugs)
+- ⚠️ **Galeria de Imagens**: Interface básica criada, mas pode estar incompleta
+- ❌ **Sistema de Recomendações**: Não implementado ou com problemas
+- ❌ **Processamento em Tempo Real**: Não disponível no momento
 
 ### Backend (FastAPI + Python)
-- **API RESTful**: Endpoints completos para gerenciamento de imagens
-- **Processamento de Imagens**: Extração de features, cores dominantes e tags
-- **Sistema de Recomendação**: Algoritmo de similaridade com vetores de features
-- **Armazenamento**: Sistema de uploads com organização por ID
+- ⚠️ **API RESTful**: Endpoints básicos implementados, mas podem ter limitações
+- ⚠️ **Processamento de Imagens**: Extração de features em desenvolvimento
+- ❌ **Sistema de Recomendação**: Não está funcionando corretamente
+- ⚠️ **Armazenamento**: Sistema básico de uploads implementado
 
 ## 📁 Estrutura do Projeto
 
@@ -220,6 +224,26 @@ docker run -p 8000:8000 image-recommender-api
 - [ ] **Testes de Integração**: Adicionar testes E2E com Cypress
 - [ ] **CI/CD**: Configurar pipelines de deploy automático
 - [ ] **Monitoramento**: Adicionar logs e métricas de performance
+
+## ⚠️ Estado Atual do Projeto
+
+### Funcionalidades Implementadas
+- ✅ Notebook Python com sistema de recomendação básico (`image_recommender.ipynb`)
+- ✅ Extração de embeddings usando ResNet
+- ✅ Cálculo de similaridade entre imagens
+- ✅ Sistema de indexação e busca
+
+### Funcionalidades Não Implementadas/Incompletas
+- ❌ Frontend React (estrutura básica pode existir, mas não integrada)
+- ❌ Backend FastAPI (não encontrado na estrutura atual)
+- ❌ Integração entre frontend e backend
+- ❌ Sistema de upload de imagens funcional
+- ❌ Interface de usuário para visualização de recomendações
+
+### Arquivos Encontrados
+- ✅ `image_recommender.ipynb`: Sistema completo de recomendação em Python
+- ❌ Arquivos do frontend React (não localizados)
+- ❌ Arquivos do backend FastAPI (não localizados)
 
 ## 🎨 Design e UX
 
