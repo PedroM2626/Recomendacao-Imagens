@@ -128,17 +128,6 @@ staticfiles/
 *.db
 *.sqlite3
 
-# Images (large files)
-*.jpg
-*.jpeg
-*.png
-*.gif
-*.bmp
-*.tiff
-*.webp
-uploads/
-media/uploads/
-
 # Keep only sample images
 !sample_images/
 !public/sample_images/
