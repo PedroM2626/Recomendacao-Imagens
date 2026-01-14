@@ -1,44 +1,38 @@
 # Sistema de Recomendação de Imagens
 
-> ⚠️ **EM DESENVOLVIMENTO** - Este projeto está em fase ativa de desenvolvimento. Algumas funcionalidades podem não estar completas ou podem apresentar instabilidades.
+> 🎯 **FOCO DO PROJETO**: O núcleo funcional deste projeto reside no script Python [image_recommender.py](file:///c:/Users/pedro/Downloads/Recomendacao-Imagens/image_recommender.py) e no notebook [image_recommender.ipynb](file:///c:/Users/pedro/Downloads/Recomendacao-Imagens/image_recommender.ipynb).
 
-Sistema de recomendação de imagens com inteligência artificial, desenvolvido com React (frontend) e FastAPI (backend).
+> ⚠️ **EM DESENVOLVIMENTO**: A interface web (Frontend React + Backend FastAPI) está em fase inicial de desenvolvimento e ainda não é o foco principal de uso imediato.
+
+Sistema de recomendação de imagens baseado em inteligência artificial (CNN/ResNet) para extração de características e busca por similaridade.
 
 ## 🚀 Funcionalidades
 
-> ⚠️ **IMPORTANTE**: Algumas funcionalidades listadas abaixo ainda estão em desenvolvimento ou podem não estar totalmente funcionais.
+### 🐍 Núcleo Python (Foco Principal)
+- ✅ **Extração de Embeddings**: Uso de modelos pré-treinados (ResNet50/ResNet18) via PyTorch.
+- ✅ **Busca por Similaridade**: Algoritmo de busca rápida usando similaridade de cosseno.
+- ✅ **CLI Completa**: Script [image_recommender.py](file:///c:/Users/pedro/Downloads/Recomendacao-Imagens/image_recommender.py) para indexação e recomendação via linha de comando.
+- ✅ **Notebook Interativo**: [image_recommender.ipynb](file:///c:/Users/pedro/Downloads/Recomendacao-Imagens/image_recommender.ipynb) totalmente comentado e pronto para uso.
+- ✅ **Testes Automatizados**: Suíte de testes unitários, integração e aceitação inclusos no script.
 
-### Frontend (React + TypeScript)
-- ✅ **Interface Básica**: Estrutura inicial implementada
-- ⚠️ **Upload de Imagens**: Funcionalidade em desenvolvimento (pode ter bugs)
-- ⚠️ **Galeria de Imagens**: Interface básica criada, mas pode estar incompleta
-- ❌ **Sistema de Recomendações**: Não implementado ou com problemas
-- ❌ **Processamento em Tempo Real**: Não disponível no momento
-
-### Backend (FastAPI + Python)
-- ⚠️ **API RESTful**: Endpoints básicos implementados, mas podem ter limitações
-- ⚠️ **Processamento de Imagens**: Extração de features em desenvolvimento
-- ❌ **Sistema de Recomendação**: Não está funcionando corretamente
-- ⚠️ **Armazenamento**: Sistema básico de uploads implementado
+### 🌐 Interface Web (Em Desenvolvimento)
+- ⚠️ **Frontend (React)**: Estrutura inicial e componentes básicos (ainda não integrados).
+- ⚠️ **Backend (FastAPI)**: API RESTful para servir as recomendações (em fase de implementação).
 
 ## 📁 Estrutura do Projeto
 
 ```
 Recomendacao-Imagens/
-├── src/                    # Frontend React
+├── image_recommender.py    # Script principal (CLI + Core)
+├── image_recommender.ipynb # Notebook documentado
+├── src/                    # Frontend React (Em desenvolvimento)
 │   ├── components/        # Componentes reutilizáveis
 │   ├── pages/            # Páginas principais
-│   ├── services/         # Serviços de API
-│   ├── stores/           # Estado global (Zustand)
-│   ├── types/            # Definições TypeScript
-│   └── lib/              # Utilitários
-├── api/                   # Backend FastAPI
+│   └── ...
+├── api/                   # Backend FastAPI (Em desenvolvimento)
 │   ├── main.py           # Aplicação principal
-│   ├── requirements.txt  # Dependências Python
-│   └── test_main.py      # Testes unitários
+│   └── ...
 ├── .trae/documents/      # Documentação do projeto
-│   ├── product.md        # Requisitos do produto
-│   └── architecture.md   # Arquitetura técnica
 └── uploads/              # Diretório de uploads (criado automaticamente)
 ```
 
@@ -142,25 +136,29 @@ FEATURE_VECTOR_SIZE=512
 SIMILARITY_THRESHOLD=0.5
 ```
 
-## 🎯 Como Usar
+## 🎯 Como Usar (Núcleo Python)
 
-### 1. Acessar o Sistema
-- Abra o navegador e acesse `http://localhost:5173` (ou a porta indicada pelo Vite)
+O foco atual do projeto é o uso via linha de comando ou notebook interativo.
 
-### 2. Fazer Upload de Imagem
-- Clique em "Começar Agora" ou vá para `/upload`
-- Arraste e solte uma imagem ou clique para selecionar
-- Visualize o preview e confirme o upload
+### 1. Via Script Python (CLI)
 
-### 3. Explorar Recomendações
-- Após o upload, você será redirecionado automaticamente para as recomendações
-- Visualize imagens similares com porcentagem de similaridade
-- Clique em qualquer imagem para ver detalhes
+```bash
+# Para indexar uma pasta de imagens
+python image_recommender.py index --images ./minhas_imagens --out index.npz
 
-### 4. Navegar pela Galeria
-- Acesse `/gallery` para ver todas as imagens
-- Use a busca e filtros para encontrar imagens específicas
-- Clique em qualquer imagem para ver recomendações
+# Para obter recomendações para uma imagem
+python image_recommender.py recommend --index index.npz --query consulta.jpg --topk 5
+```
+
+### 2. Via Notebook Jupyter
+
+Abra o arquivo [image_recommender.ipynb](file:///c:/Users/pedro/Downloads/Recomendacao-Imagens/image_recommender.ipynb) no VS Code ou Jupyter Lab para uma experiência interativa e documentada.
+
+### 3. Executando Testes
+
+```bash
+python image_recommender.py --run-tests
+```
 
 ## 🧪 Testes
 
@@ -226,24 +224,22 @@ docker run -p 8000:8000 image-recommender-api
 - [ ] **Monitoramento**: Adicionar logs e métricas de performance
 
 ## ⚠️ Estado Atual do Projeto
-
-### Funcionalidades Implementadas
-- ✅ Notebook Python com sistema de recomendação básico (`image_recommender.ipynb`)
-- ✅ Extração de embeddings usando ResNet
-- ✅ Cálculo de similaridade entre imagens
-- ✅ Sistema de indexação e busca
-
-### Funcionalidades Não Implementadas/Incompletas
-- ❌ Frontend React (estrutura básica pode existir, mas não integrada)
-- ❌ Backend FastAPI (não encontrado na estrutura atual)
-- ❌ Integração entre frontend e backend
-- ❌ Sistema de upload de imagens funcional
-- ❌ Interface de usuário para visualização de recomendações
-
-### Arquivos Encontrados
-- ✅ `image_recommender.ipynb`: Sistema completo de recomendação em Python
-- ❌ Arquivos do frontend React (não localizados)
-- ❌ Arquivos do backend FastAPI (não localizados)
+ 
+ ### Funcionalidades Implementadas (Foco Principal)
+ - ✅ **Script Python Completo** ([image_recommender.py](file:///c:/Users/pedro/Downloads/Recomendacao-Imagens/image_recommender.py))
+ - ✅ **Notebook Interativo** ([image_recommender.ipynb](file:///c:/Users/pedro/Downloads/Recomendacao-Imagens/image_recommender.ipynb))
+ - ✅ Extração de embeddings usando ResNet (PyTorch)
+ - ✅ Cálculo de similaridade e busca eficiente
+ - ✅ Sistema de testes automatizados integrado
+ 
+ ### Interface Web (Em Desenvolvimento)
+ - ⚠️ **Frontend React**: Estrutura de arquivos presente, mas sem integração funcional.
+ - ⚠️ **Backend FastAPI**: Implementação inicial em andamento.
+ - ❌ Integração entre Web e Núcleo Python não concluída.
+ 
+ ### Arquivos Encontrados
+ - ✅ [image_recommender.py](file:///c:/Users/pedro/Downloads/Recomendacao-Imagens/image_recommender.py): Core do sistema e CLI.
+ - ✅ [image_recommender.ipynb](file:///c:/Users/pedro/Downloads/Recomendacao-Imagens/image_recommender.ipynb): Guia visual e prático.
 
 ## 🎨 Design e UX
 
