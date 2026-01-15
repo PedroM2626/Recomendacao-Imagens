@@ -8,14 +8,17 @@ Sistema de recomendação de imagens baseado em inteligência artificial (CNN/Re
 - ✅ **Busca por Similaridade**: Algoritmo de busca rápida usando similaridade de cosseno.
 - ✅ **CLI Completa**: Script [image_recommender.py](file:///c:/Users/pedro/Downloads/Recomendacao-Imagens/image_recommender.py) para indexação e recomendação via linha de comando.
 - ✅ **Notebook Interativo**: [image_recommender.ipynb](file:///c:/Users/pedro/Downloads/Recomendacao-Imagens/image_recommender.ipynb) totalmente comentado e pronto para uso com visualização de resultados.
+- ✅ **Interface Gradio**: Interface web amigável em [app.py](file:///c:/Users/pedro/Downloads/Recomendacao-Imagens/app.py) para uso simplificado.
 - ✅ **Testes Automatizados**: Suíte de testes unitários, integração e aceitação inclusos no script.
 
 ## 📁 Estrutura do Projeto
 
 ```
 Recomendacao-Imagens/
+├── app.py                  # Interface Web (Gradio)
 ├── image_recommender.py    # Script principal (CLI + Core + Testes)
 ├── image_recommender.ipynb # Notebook documentado e interativo
+├── requirements.txt        # Dependências do projeto
 ├── dataset/                # Diretório padrão com imagens para teste
 ├── .env.example            # Exemplo de configurações de ambiente
 └── README.md               # Documentação do projeto
@@ -25,6 +28,7 @@ Recomendacao-Imagens/
 
 - **Python 3.11+** - Linguagem principal
 - **PyTorch / Torchvision** - Extração de características (ResNet)
+- **Gradio** - Interface web interativa
 - **NumPy** - Computação numérica e armazenamento de índices
 - **PIL (Pillow)** - Processamento e manipulação de imagens
 - **Matplotlib / ipywidgets** - Visualização e interface no Notebook
@@ -40,7 +44,7 @@ cd Recomendacao-Imagens
 
 2. Instale as dependências:
 ```bash
-pip install torch torchvision numpy Pillow python-dotenv matplotlib ipywidgets
+pip install -r requirements.txt
 ```
 
 3. (Opcional) Configure o arquivo `.env`:
@@ -50,7 +54,16 @@ cp .env.example .env
 
 ## 🎯 Como Usar
 
-### 1. Via Script Python (CLI)
+### 1. Interface Web (Gradio)
+
+A forma mais fácil de usar o projeto visualmente:
+
+```bash
+python app.py
+```
+Isso abrirá uma interface no seu navegador (geralmente em `http://localhost:7860`) onde você pode arrastar imagens e ver as recomendações.
+
+### 2. Via Script Python (CLI)
 
 O script suporta dois comandos principais: `index` (para criar o índice de busca) e `recommend` (para buscar imagens semelhantes).
 
