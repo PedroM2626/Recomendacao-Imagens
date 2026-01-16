@@ -1,6 +1,13 @@
 # Sistema de Recomendação de Imagens
 
+[![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Space-blue)](https://huggingface.co/spaces/PedroM2626/image-recommender)
+
 Sistema de recomendação de imagens baseado em inteligência artificial (CNN/ResNet) para extração de características e busca por similaridade. O projeto foca no uso prático através de um script CLI e um notebook interativo.
+
+## 🔗 Demo Online
+
+Você pode testar a aplicação agora mesmo sem instalar nada através do Hugging Face Spaces:
+👉 **[Acesse a Demo no Hugging Face](https://huggingface.co/spaces/PedroM2626/image-recommender)**
 
 ## 🚀 Funcionalidades
 
